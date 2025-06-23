@@ -1,0 +1,387 @@
+/* ===== Estilos base ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #00cfff, #003d5c);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ===== Header y navegación ===== */
+header {
+  background-color: #00CFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #000;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Responsive: menú hamburguesa ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #00CFFF;
+    width: 100%;
+    text-align: right;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: flex-start; /* Cambiado de flex-end a flex-start */
+    padding-left: 0; /* Opcional para quitar indentación */
+  }
+
+  .nav-menu li {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .nav-menu a {
+    width: 100%; /* Que los links llenen todo el ancho */
+    margin-right: 0;
+    padding: 12px 20px;
+    border-radius: 0; /* Bordes cuadrados en móvil */
+  }
+}
+
+/* ===== Main y contenido ===== */
+main {
+  padding: 20px;
+}
+
+/* ===== Estándares de red ===== */
+.estandares {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  padding: 0 15px;
+}
+
+.estandar {
+  background-color: #fff;
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.estandar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.estandar img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.estandar h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.estandar p {
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* ===== Estilos especiales para categoría de red ===== */
+.estandar.categoria {
+  background-color: #e0f7ff;
+  color: #003d5c;
+  box-shadow: none;
+  text-align: left;
+  padding: 20px 25px;
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}
+
+.estandar.categoria h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+}
+
+.estandar.categoria p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Enlaces dentro del contenido */
+.estandar p a {
+  color: #007acc;
+  text-decoration: underline;
+}
+
+.estandar p a:hover {
+  color: #005f99;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #00CFFF;
+  text-align: center;
+  padding: 10px;
+  color: #000;
+}
+
+/* ===== Banner de Cookies ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #003d5c;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  font-size: 0.9em;
+}
+
+.cookie-banner button {
+  background-color: #00CFFF;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cookie-banner button:hover {
+  background-color: #00aacc;
+}
+
+/* ===== Responsive ajustes adicionales ===== */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .estandar {
+    padding: 15px;
+  }
+
+  .estandar img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .estandares {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .estandar {
+    padding: 25px;
+  }
+
+  .estandar h3 {
+    font-size: 1.3em;
+  }
+
+  .estandar p {
+    font-size: 1em;
+  }
+
+  .cookie-banner {
+    font-size: 1em;
+    padding: 20px;
+  }
+}
+/* Menú tipo cuadritos */
+.nav-menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-menu li {
+  margin: 5px;
+}
+
+.nav-menu a {
+  background-color: #00CFFF;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-menu a:hover {
+  background-color: #00b5dd;
+  transform: translateY(-2px);
+}
+
+/* Adaptación responsive */
+@media (max-width: 768px) {
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .nav-menu li {
+    margin: 0;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+}
+/* Menú: ítems como cuadros/botones */
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-menu li {
+  margin: 5px 0;
+}
+
+/* Estilo para enlaces en menú: cuadros */
+.nav-menu a {
+  color: #fff;
+  background-color: #007acc;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover {
+  background-color: #005f99;
+  transform: scale(1.05);
+}
+
+/* Estilo para los encabezados de categorías dentro del menú */
+.categoria-menu {
+  width: 100%;
+  padding: 10px 0 5px 0;
+  font-weight: bold;
+  color: #003d5c;
+  background-color: #e0f7ff;
+  border-radius: 8px;
+  cursor: default;
+  user-select: none;
+  margin-top: 10px;
+}
+
+/* Menú hamburguesa - responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #003d5c;
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: flex-start; /* Ajuste para que el menú sea vertical y alineado a la izquierda */
+    padding-left: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    margin-right: 0;
+    padding: 12px 20px;
+    border-radius: 0;
+  }
+
+  .categoria-menu {
+    text-align: left;
+    color: #00cfff;
+    background-color: transparent;
+    padding-left: 0;
+  }
+}
