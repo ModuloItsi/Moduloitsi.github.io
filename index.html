@@ -211,5 +211,16 @@
       menuToggle.setAttribute('aria-expanded', !expanded);
     });
   </script>
+  <div class="cookie-banner" id="cookie-banner" style="display: none;">
+  <span>Este sitio utiliza cookies para mejorar tu experiencia. </span>
+  <button id="accept-cookies">Aceptar</button>
+</div>
+<script>
+  // Crear cookie si no existe
+  if (!document.cookie.includes("visitado=true")) {
+    document.cookie = "visitado=true; max-age=" + 60 * 60 * 24 * 30 + "; path=/"; // 30 días
+    alert("Usamos cookies para mejorar tu experiencia.");
+  }
+</script>
 </body>
 </html>
